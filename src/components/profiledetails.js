@@ -16,6 +16,9 @@ class ProfileDetail extends Component {
             <div>
             <div>Full Name:{this.props.activeProfile.item.userAccountInfo.fullName}</div>
             <div>Email:{this.props.activeProfile.item.userAccountInfo.email}</div>
+            <div>Athorities:{this.props.activeProfile.item.userAccountInfo.authorities.map((authority)=>(
+                <ul><li>{authority}</li></ul>
+            ))}</div>
             </div>
         )
     }
