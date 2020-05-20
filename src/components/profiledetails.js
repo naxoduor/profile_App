@@ -11,10 +11,11 @@ class ProfileDetail extends Component {
         }
     }
     render(){
+        console.log(this.props.activeProfile)
         return(
             <div>
-            <div>Full Name:{this.props.activeProfile.item.fullName}</div>
-            <div>Email:{this.props.activeProfile.item.email}</div>
+            <div>Full Name:{this.props.activeProfile.item.userAccountInfo.fullName}</div>
+            <div>Email:{this.props.activeProfile.item.userAccountInfo.email}</div>
             </div>
         )
     }
