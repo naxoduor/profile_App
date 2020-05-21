@@ -18,11 +18,25 @@
     padding: 5px;
     text-decoration: none;
 }
-
+.detail-link{
+    text-decoration: none;
+}
 .label{
     color:  #808080;
 }
 
+.check{
+    margin-left: 200px;
+    font-size: 3px;
+    color:blue;
+}
+.input-element{
+    font-size: 12px
+}
+img{
+    width: 70px;
+    height: 70px;
+}
 .title{
     color: #404040;
     font-size: 40px;
@@ -30,4 +44,8 @@
 }
 .link{
     text-decoration: none
+}
+.checkboxx{
+    display: flex;
+    flex-direction: row;
 }

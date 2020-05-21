@@ -3,6 +3,7 @@ import { updateProfiles } from '../action/updateActions'
 import React, { Component } from 'react';
 import './profiledetails.css';
 import { Link } from 'react-router-dom'
+import { Form, Row, Col, FormGroup, FormLabel, FormControl, Button, FormCheck } from 'react-bootstrap';
 class ProfileDetail extends Component {
 
     constructor(props) {
@@ -13,24 +14,44 @@ class ProfileDetail extends Component {
         }
     }
 
-     logout=(e)=>{
-
+    logout = (e) => {
     }
+
     render() {
         console.log(this.props.activeProfile)
         return (
             <div className="profileContent">
-            <h className="title">Profile</h>
+                <h className="title">Profile</h>
+                
                 <div className="profileInfo">
-                    <div className="detail-elements"><label className="label">Full Name:</label><br/>
+                <div className="image_wrapper">
+                        <img
+                            title="logo"
+                            src="/images/app_logo.png"
+                        />
+                        </div>
+                    <div className="detail-elements"><label className="label">Full Name:</label><br />
                         {this.props.activeProfile.item.userAccountInfo.fullName}
                     </div>
-                    <div className="detail-elements"><label className="label">Email:</label><br/>
+                    <div className="detail-elements"><label className="label">Email:</label><br />
                         {this.props.activeProfile.item.userAccountInfo.email}
                     </div>
-                    <Link className="detail-elements" to="/">Change Password</Link>
-                    <Link className="detail-elements" to="/">Select App Language</Link>
-                    <Link className="detail-elements" to="/">Logout</Link>
+                    <div className="detail-elements">
+                        <Link className="detail-link" to="/">Change Password</Link>
+                    </div>
+                    <div className="detail-elements">
+                        <Link className="detail-link" to="/">Select App Language</Link>
+                        <FormControl as="select" onChange={this.logout}>
+                            <option>Choose...</option>
+                            <option>English</option>
+                            <option>Swahili</option>
+                        </FormControl>
+                    </div>
+                    <div className="checkboxx detail-elements">
+                        <div>
+                            <Link className="detail-link" to="/">Logout</Link>
+                        </div>
+                        <div className="input-element"><input className="check" type="checkbox" label="Check me out" />Logout on all devices</div>                    </div>
                 </div>
             </div>
 
