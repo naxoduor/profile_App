@@ -9,8 +9,8 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      good: "good guy",
-
+      showProfile:true,
+      showHelp: false
     }
   }
 
@@ -25,15 +25,25 @@ class App extends Component {
     this.props.updateProfiles(user)
   }
 
+  displayProfile=()=>{
+    this.setState({showProfile:true})
+    this.setState({showHelp:false})
+  }
+
+  displayHelp=()=>{
+    this.setState({showProfile:false})
+    this.setState({showHelp:true})
+  }
+
   render() {
     return (
       <div className="App">
         <div class="sidebar">
-          <a class="active" href="#home">Profile</a>
-          <a href="#help">Help</a>
+          <a class="active" href="#home" onClick={this.displayProfile}>Profile</a>
+          <a href="#help" onClick={this.displayHelp}>Help</a>
         </div>
         <div className="content">
-          <ProfileDetail />
+          <ProfileDetail show={this.state.showProfile}/>
         </div>
       </div>
     );

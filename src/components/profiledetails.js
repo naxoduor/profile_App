@@ -9,17 +9,16 @@ class ProfileDetail extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            showCart: false,
-            id: "",
+            id: "1",
+            
         }
-    }
-
-    logout = (e) => {
     }
 
     render() {
         console.log(this.props.activeProfile)
+        const showModal=this.props.show? "display-block":"display-none"
         return (
+            <div className={showModal}>
             <div className="profileContent">
                 <h className="title">Profile</h>
                 
@@ -53,6 +52,7 @@ class ProfileDetail extends Component {
                         </div>
                         <div className="input-element"><input className="check" type="checkbox" label="Check me out" />Logout on all devices</div>                    </div>
                 </div>
+            </div>
             </div>
 
         )
