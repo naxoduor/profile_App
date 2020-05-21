@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { updateProfiles } from '../action/updateActions'
 import React, { Component } from 'react';
 import './profiledetails.css';
+import { Link } from 'react-router-dom'
 class ProfileDetail extends Component {
 
     constructor(props) {
@@ -11,26 +12,25 @@ class ProfileDetail extends Component {
             id: "",
         }
     }
+
+     logout=(e)=>{
+
+    }
     render() {
         console.log(this.props.activeProfile)
         return (
             <div className="profileContent">
-            <h>Profile</h>
+            <h className="title">Profile</h>
                 <div className="profileInfo">
-                    <div><label>Full Name:</label>
+                    <div className="detail-elements"><label className="label">Full Name:</label><br/>
                         {this.props.activeProfile.item.userAccountInfo.fullName}
                     </div>
-                    <div><label>Email:</label>
+                    <div className="detail-elements"><label className="label">Email:</label><br/>
                         {this.props.activeProfile.item.userAccountInfo.email}
                     </div>
-                    <div><label>Athorities:</label>
-                        {this.props.activeProfile.item.userAccountInfo.authorities.map((authority) => (
-                            <ul><li>{authority}</li></ul>
-                        ))}
-                    </div>
-                    <div>Change Password</div>
-                    <div>Select App Language</div>
-                    <div>Logout</div>
+                    <Link className="detail-elements" to="/">Change Password</Link>
+                    <Link className="detail-elements" to="/">Select App Language</Link>
+                    <Link className="detail-elements" to="/">Logout</Link>
                 </div>
             </div>
 
