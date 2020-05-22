@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ProfileDetail from './components/profiledetails'
+import ContactDetails from './components/contacts'
 import { connect } from 'react-redux';
 import { updateProfiles } from './action/updateActions'
 
@@ -44,6 +45,7 @@ class App extends Component {
         </div>
         <div className="content">
           <ProfileDetail show={this.state.showProfile}/>
+          <ContactDetails show={this.state.showHelp}/>
         </div>
       </div>
     );
