@@ -26,10 +26,10 @@ class ProfileDetail extends Component {
                 <div className="image_wrapper">
                         <img
                             title="logo"
-                            src="/images/app_logo.png"
+                            src="/images/logo192.png"
                         />
                         </div>
-                    <div className="detail-elements"><label className="label">Full Name:</label><br />
+                    <div className="detail-elements"><label className="label">Full Name:</label><br/>
                         {this.props.activeProfile.item.userAccountInfo.fullName}
                     </div>
                     <div className="detail-elements"><label className="label">Email:</label><br />

@@ -40,8 +40,8 @@ class App extends Component {
     return (
       <div className="App">
         <div class="sidebar">
-          <a class="active" href="#home" onClick={this.displayProfile}>Profile</a>
-          <a href="#help" onClick={this.displayHelp}>Help</a>
+          <a className={this.state.showProfile? "active":""} href="#home" onClick={this.displayProfile}>Profile</a>
+          <a className={this.state.showHelp? "active":""} href="#help" onClick={this.displayHelp}>Help</a>
         </div>
         <div className="content">
           <ProfileDetail show={this.state.showProfile}/>

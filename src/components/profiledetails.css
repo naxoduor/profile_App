@@ -39,6 +39,9 @@
 .input-element{
     font-size: 12px
 }
+.image_wrapper{
+    text-align: center;
+}
 img{
     width: 70px;
     height: 70px;
